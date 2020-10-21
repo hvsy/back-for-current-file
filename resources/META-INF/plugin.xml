@@ -1,0 +1,39 @@
+<idea-plugin>
+  <id>com.sumenghua.back-for-current-file</id>
+  <name>back for current file</name>
+  <version>1.0</version>
+  <vendor email="sumenghua@live.com" url="http://www.github.com/hvsy/">sumenghua</vendor>
+
+  <description><![CDATA[
+      back for current file.
+    ]]></description>
+
+  <change-notes><![CDATA[
+      initial release.
+    ]]>
+  </change-notes>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <action id="backForCurrentFile" class="com.sumenghua.BackForCurrentFile.BackAction" text="Back For Current File"
+            description="Back for current file">
+            <add-to-group  group-id="GoToMenu" anchor="after" relative-to-action="Forward" />
+    </action>
+    <action id="clearNavigation" class="com.sumenghua.BackForCurrentFile.ClearNavigationHistoryAction" text="Clear Navigation History"
+            description="clear navigation history">
+            <add-to-group group-id="GoToMenu" anchor="last"/>
+    </action>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
